@@ -8,11 +8,14 @@ ENV HOME /root
 
 #add repository and update the container
 #Installation of nesesary package/software for this containers...
-RUN apt-get update && apt-get install -y -q xxxxxxxxxxxxx \
+RUN add-apt-repository ppa:staticfloat/julianightlies \
+    && add-apt-repository ppa:staticfloat/julia-deps
+RUN apt-get update && apt-get install -y -q julia \
                     && apt-get clean \
                     && rm -rf /tmp/* /var/tmp/*  \
                     && rm -rf /var/lib/apt/lists/*
 
+RUN pip install "ipython[notebook]"
 #General variable definition....
 
 ##startup scripts  
