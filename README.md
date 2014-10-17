@@ -1,5 +1,5 @@
-docker-ijulia-notebook
-======================
+docker-ijulia
+=============
 
 container running IJulia Notebook
 
