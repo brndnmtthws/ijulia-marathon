@@ -49,7 +49,7 @@ VOLUME /var/backups
 
 # to allow access from outside of the container  to the container service
 # at that ports need to allow access from firewall if need to access it outside of the server. 
-EXPOSE #ports
+EXPOSE 80
 
 #creatian of volume 
 #VOLUME 
