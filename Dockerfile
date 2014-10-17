@@ -10,7 +10,10 @@ ENV HOME /root
 #Installation of nesesary package/software for this containers...
 RUN add-apt-repository ppa:staticfloat/julianightlies \
     && add-apt-repository ppa:staticfloat/julia-deps
-RUN apt-get update && apt-get install -y -q julia \
+RUN apt-get update && apt-get install -y -q apt-utils \
+                    python-software-properties \
+                    software-properties-common \
+                    julia \
                     && apt-get clean \
                     && rm -rf /tmp/* /var/tmp/*  \
                     && rm -rf /var/lib/apt/lists/*
