@@ -13,6 +13,7 @@ RUN add-apt-repository ppa:staticfloat/julianightlies \
 RUN apt-get update && apt-get install -y -q apt-utils \
                     python-software-properties \
                     software-properties-common \
+                    python-pip \
                     julia \
                     && apt-get clean \
                     && rm -rf /tmp/* /var/tmp/*  \
