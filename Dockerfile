@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y -q apt-utils \
                     software-properties-common \
                     python-pip \
                     pandoc \
+                    python-setuptools \
                     julia \
                     && apt-get clean \
                     && rm -rf /tmp/* /var/tmp/*  \
