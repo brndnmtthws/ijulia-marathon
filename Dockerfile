@@ -11,11 +11,13 @@ ENV HOME /root
 RUN add-apt-repository ppa:staticfloat/julianightlies \
     && add-apt-repository ppa:staticfloat/julia-deps
 RUN apt-get update && apt-get install -y -q apt-utils \
+                    python  \
+                    python-dev  \
+                    python-distribute \
                     python-software-properties \
                     software-properties-common \
                     python-pip \
                     pandoc \
-                    python-setuptools \
                     julia \
                     && apt-get clean \
                     && rm -rf /tmp/* /var/tmp/*  \
