@@ -86,7 +86,7 @@ RUN mkdir cbc; cd cbc; wget http://www.coin-or.org/download/source/Cbc/Cbc-2.8.1
     cd ../..; \
     rm -rf cbc
 
-RUN pip install "ipython[notebook]"
+RUN pip install "ipython[notebook]" --upgrade
 #General variable definition....
 
 ##startup scripts  
