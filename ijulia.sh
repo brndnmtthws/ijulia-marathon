@@ -4,4 +4,4 @@
 # If you omit that part, the command will be run as root.
 
 
-exec ipython notebook --profile julia >>/var/log/ijulia.log 2>&1
+exec ipython notebook --no-browser --profile julia >>/var/log/ijulia.log 2>&1
