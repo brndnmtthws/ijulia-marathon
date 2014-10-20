@@ -87,7 +87,6 @@ RUN mkdir cbc; cd cbc; wget http://www.coin-or.org/download/source/Cbc/Cbc-2.8.1
     rm -rf cbc
 
 RUN pip install "ipython[notebook]" --upgrade
-#General variable definition....
 
 ##startup scripts  
 #Pre-config scrip that maybe need to be run one time only when the container run the first time .. using a flag to don't 
@@ -98,6 +97,14 @@ RUN chmod +x /etc/my_init.d/startup.sh
 
 
 ##Adding Deamons to containers
+RUN mkdir /etc/service/ijulia
+COPY ijulia.sh /etc/service/ijulia/run
+RUN chmod +x /etc/service/ijulia/run
+
+RUN mkdir /etc/service/tornado
+COPY tornado.sh /etc/service/tornado/run
+RUN chmod +x /etc/service/tornado/run
+
 
 #pre-config scritp for different service that need to be run when container image is create 
 #maybe include additional software that need to be installed ... with some service running ... like example mysqld
