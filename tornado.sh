@@ -5,10 +5,4 @@
 
 directory=/root/.juliabox/tornado
 
-stdout_logfile_backups = 2
-stdout_logfile_maxbytes = 1MB
-stderr_logfile_backups = 2
-stderr_logfile_maxbytes = 1MB
-
-
 exec /root/.juliabox/tornado/src/fmanage.py >>/var/log/tornado.log 2>&1
