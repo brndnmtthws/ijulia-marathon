@@ -101,11 +101,6 @@ RUN mkdir /etc/service/ijulia
 COPY ijulia.sh /etc/service/ijulia/run
 RUN chmod +x /etc/service/ijulia/run
 
-RUN mkdir /etc/service/tornado
-COPY tornado.sh /etc/service/tornado/run
-RUN chmod +x /etc/service/tornado/run
-
-
 #pre-config scritp for different service that need to be run when container image is create 
 #maybe include additional software that need to be installed ... with some service running ... like example mysqld
 COPY pre-conf.sh /sbin/pre-conf
