@@ -61,6 +61,7 @@ RUN apt-get update && apt-get install -y -q apt-utils \
                     openmpi-bin \
                     libopenmpi-dev \
                     julia \
+                    ipython-notebook \
                     && apt-get clean \
                     && rm -rf /tmp/* /var/tmp/*  \
                     && rm -rf /var/lib/apt/lists/*
@@ -85,8 +86,6 @@ RUN mkdir cbc; cd cbc; wget http://www.coin-or.org/download/source/Cbc/Cbc-2.8.1
     echo "/usr/local/lib" > /etc/ld.so.conf.d/cbc.conf; ldconfig; \
     cd ../..; \
     rm -rf cbc
-
-RUN easy_install ipython[all]
 
 ##startup scripts  
 #Pre-config scrip that maybe need to be run one time only when the container run the first time .. using a flag to don't 
