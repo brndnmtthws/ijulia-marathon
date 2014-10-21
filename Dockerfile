@@ -86,7 +86,7 @@ RUN mkdir cbc; cd cbc; wget http://www.coin-or.org/download/source/Cbc/Cbc-2.8.1
     cd ../..; \
     rm -rf cbc
 
-RUN easy_install ipython
+RUN easy_install ipython[all]
 
 ##startup scripts  
 #Pre-config scrip that maybe need to be run one time only when the container run the first time .. using a flag to don't 
