@@ -5,6 +5,8 @@
 #the docker image to run more that one software for expecified configuration like when you need mysql running to chnage or create
 #database for the container ...
 
+python -m IPython.external.mathjax
+
 ipython profile create julia
 
 julia -e 'Pkg.init(); Pkg.add("IJulia"); Pkg.add("PyPlot"); Pkg.add("SIUnits"); Pkg.add("Gadfly"); Pkg.add("DataStructures"); Pkg.add("HDF5"); Pkg.add("Iterators"); Pkg.add("MCMC"); Pkg.add("NumericExtensions"); Pkg.add("SymPy"); Pkg.add("Interact"); Pkg.add("Roots");'
