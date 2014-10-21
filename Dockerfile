@@ -63,6 +63,7 @@ RUN apt-get update && apt-get install -y -q apt-utils \
                     libopenmpi-dev \
                     julia \
                     ipython \
+                    ipython-notebook \
                     && apt-get clean \
                     && rm -rf /tmp/* /var/tmp/*  \
                     && rm -rf /var/lib/apt/lists/*
