@@ -5,6 +5,14 @@ container running IJulia Notebook
 
 docker run -d -p 8998:8998 quantumobject/docker-ijulia
 
+run the after install script to increase security :
+
+docker exec -it container_id /sbin/after_install
+
+
+now you can check your ijulia at https://host:8998/    if after_install was not run the check http://...
+
+
 to access the container from server running docker :
 
 docker exec -it container_id /bin/bash
