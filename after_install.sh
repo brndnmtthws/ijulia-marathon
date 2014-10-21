@@ -1,7 +1,7 @@
 #!/bin/sh
 
 
-PASSWORD = $(ipython -e "from IPython.lib import passwd; passwd()")
+PASSWORD = $(python -c "from IPython.lib import passwd; passwd()")
 echo 'c.NotebookApp.password = u$PASSWORD' >> /root/.ipython/profile_julia/ipython_notebook_config.py
 
 mkdir -p /root/.ssl
