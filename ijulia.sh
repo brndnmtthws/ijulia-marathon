@@ -6,4 +6,13 @@
 export HOME=/root
 cd /root
 
-exec julia -e "using IJulia;notebook();" >>/var/log/ijulia.log 2>&1
+
+
+if [ -f /etc/secured ]; then
+        echo 'already secured'
+        exec julia -e "using IJulia;notebook();" >>/var/log/ijulia.log 2>&1
+else
+        echo 'need to secured by running docker exec -it container_id after_install to be able to used it'
+        echo 'need to secured by running docker exec -it container_id after_install to be able to used it' >> /var/log/ijulia.log 2>&1
+fi
+
