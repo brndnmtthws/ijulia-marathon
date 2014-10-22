@@ -4,4 +4,4 @@
 # If you omit that part, the command will be run as root.
 
 
-exec /bin/bash -c "cd /root ; julia -e "using IJulia;notebook();"" >>/var/log/ijulia.log 2>&1
+exec /bin/bash -c "cd /root ; julia -e 'using IJulia;notebook();'" >>/var/log/ijulia.log 2>&1
