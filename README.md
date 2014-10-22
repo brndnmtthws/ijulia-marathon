@@ -3,7 +3,7 @@ docker-ijulia
 
 container running IJulia Notebook
 
-docker run -d -p 8998:8998 quantumobject/docker-ijulia
+docker run -d -p 8888:8888 quantumobject/docker-ijulia
 
 run the after install script to increase security :
 
