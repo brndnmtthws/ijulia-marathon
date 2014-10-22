@@ -3,7 +3,7 @@
 # `/sbin/setuser xxxxx` runs the given command as the user `xxxxxx`.
 # If you omit that part, the command will be run as root.
 
-export HOME = /root
+export HOME=/root
 cd /root
 
-exec julia -e 'using IJulia;notebook();' >>/var/log/ijulia.log 2>&1
+exec julia -e "using IJulia;notebook();" >>/var/log/ijulia.log 2>&1
