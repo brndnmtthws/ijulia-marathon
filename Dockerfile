@@ -1,5 +1,5 @@
 #name of container: docker-ijulia-notebook
-#versison of container: 0.5.1
+#versison of container: 0.5.2
 FROM quantumobject/docker-baseimage
 MAINTAINER Angel Rodriguez  "angel@quantumobject.com"
 
@@ -69,8 +69,8 @@ RUN apt-get update && apt-get install -y -q apt-utils \
                     && rm -rf /var/lib/apt/lists/*
                     
 # Ipopt
-RUN mkdir ipopt; cd ipopt; wget  http://www.coin-or.org/download/source/Ipopt/Ipopt-3.11.7.tgz; \
-    tar -xzf Ipopt-3.11.7.tgz; cd Ipopt-3.11.7; \
+RUN mkdir ipopt; cd ipopt; wget  http://www.coin-or.org/download/source/Ipopt/Ipopt-3.11.9.tgz; \
+    tar -xzf Ipopt-3.11.9.tgz; cd Ipopt-3.11.9; \
     cd ThirdParty/Blas; ./get.Blas; ./configure --prefix=/usr/local --disable-shared --with-pic; make install; cd ../..; \
     cd ThirdParty/Lapack; ./get.Lapack; ./configure --prefix=/usr/local --disable-shared --with-pic; make install; cd ../..; \
     cd ThirdParty/Mumps; ./get.Mumps; cd ../..; \
