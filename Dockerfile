@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y -q apt-utils \
                     libreadline-dev \
                     libncurses-dev \
                     libpcre3-dev \
-                    libgnutls28 \
+                    libgnutls28-dev \
                     tmux \
                     pkg-config \
                     pdf2svg \
