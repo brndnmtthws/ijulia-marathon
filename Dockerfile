@@ -64,7 +64,7 @@ RUN apt-get update && apt-get install -y -q apt-utils \
                     
 # ipython notebook install
 RUN apt-get update && apt-get install -y -q python-pip && pip install ipython \
-                    && pip install "ipython[notebook]" \
+                    && pip install --upgrade ipython[notebook] \
                     && apt-get clean \
                     && rm -rf /tmp/* /var/tmp/*  \
                     && rm -rf /var/lib/apt/lists/*
