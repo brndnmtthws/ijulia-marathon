@@ -6,8 +6,7 @@ MAINTAINER Angel Rodriguez  "angel@quantumobject.com"
 #add repository and update the container
 #Installation of nesesary package/software for this containers...
 RUN add-apt-repository ppa:staticfloat/julianightlies \
-    && add-apt-repository ppa:staticfloat/julia-deps \
-    && # add-apt-repository ppa:jtaylor/ipython  ==>  fail to work with last ubuntu 
+    && add-apt-repository ppa:staticfloat/julia-deps 
 RUN apt-get update && apt-get install -y -q apt-utils \
                     build-essential \
                     hdf5-tools \
@@ -59,8 +58,6 @@ RUN apt-get update && apt-get install -y -q apt-utils \
                     openmpi-bin \
                     libopenmpi-dev \
                     julia \
-                    # ipython \ fail to install under ubuntu
-                    # ipython-notebook \ fail to install ubuntu
                     && apt-get clean \
                     && rm -rf /tmp/* /var/tmp/*  \
                     && rm -rf /var/lib/apt/lists/*
