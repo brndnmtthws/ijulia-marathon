@@ -31,7 +31,7 @@ Need to provide new password and info to generate ssl for access web interface o
 
 After that check with your browser at addresses plus the port 8787:
 
-  - **http://host_ip:8787/**
+  - **https://host_ip:8787/**
 
 To access the container from the server running docker :
 
