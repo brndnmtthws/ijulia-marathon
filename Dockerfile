@@ -97,7 +97,6 @@ RUN mkdir -p /etc/my_init.d
 COPY startup.sh /etc/my_init.d/startup.sh
 RUN chmod +x /etc/my_init.d/startup.sh
 
-
 ##Adding Deamons to containers
 RUN mkdir /etc/service/ijulia
 COPY ijulia.sh /etc/service/ijulia/run
@@ -110,13 +109,11 @@ RUN chmod +x /sbin/pre-conf \
     && /bin/bash -c /sbin/pre-conf \
     && rm /sbin/pre-conf
 
-
 ##scritp that can be running from the outside using docker-bash tool ...
 ## for example to create backup for database with convitation of VOLUME   dockers-bash container_ID backup_mysql
 COPY backup.sh /sbin/backup
 RUN chmod +x /sbin/backup
 VOLUME /var/backups
-
 
 #add files and script that need to be use for this container
 #include conf file relate to service/daemon 
@@ -127,9 +124,6 @@ RUN chmod +x /sbin/after_install
 # to allow access from outside of the container  to the container service
 # at that ports need to allow access from firewall if need to access it outside of the server. 
 EXPOSE 8888 8998
-
-#creatian of volume 
-#VOLUME 
 
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
