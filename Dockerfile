@@ -9,6 +9,7 @@ RUN add-apt-repository ppa:staticfloat/julianightlies \
     && add-apt-repository ppa:staticfloat/julia-deps 
 RUN apt-get update && apt-get install -y -q apt-utils \
                     build-essential \
+                    libpng12-dev \
                     hdf5-tools \
                     glpk-utils \
                     libnlopt0 \
