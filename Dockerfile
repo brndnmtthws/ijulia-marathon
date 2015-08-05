@@ -38,7 +38,6 @@ RUN apt-get update && apt-get install -y -q apt-utils \
                     libffi-dev \
                     libssl-dev \
                     libzmq-dev \
-                    libzmq \
                     python-pip \
                     python-sympy \
                     python-zmq \
