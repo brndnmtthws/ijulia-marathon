@@ -35,7 +35,10 @@ RUN apt-get update && apt-get install -y -q apt-utils \
                     python-m2crypto \
                     python-crypto \
                     msgpack-python \
-                    python-dev \
+                    libffi-dev \
+                    libssl-dev \
+                    libzmq-dev \
+                    libzmq \
                     python-pip \
                     python-sympy \
                     python-zmq \
