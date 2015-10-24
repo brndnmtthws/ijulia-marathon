@@ -127,7 +127,7 @@ RUN chmod +x /sbin/after_install
 
 # to allow access from outside of the container  to the container service
 # at that ports need to allow access from firewall if need to access it outside of the server. 
-EXPOSE 8888 8998
+EXPOSE 8998
 
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
