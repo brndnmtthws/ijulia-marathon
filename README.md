@@ -43,6 +43,8 @@ About [IJulia][1]
 
 To help improve this container [docker-ijulia][5]
 
+For additional info about us and our projects check our site [www.quantumobject.com][10]
+
 [1]:https://github.com/JuliaLang/IJulia.jl
 [2]:https://www.docker.com
 [3]:https://github.com/JuliaLang/IJulia.jl
@@ -52,3 +54,4 @@ To help improve this container [docker-ijulia][5]
 [7]:http://ipython.org
 [8]:http://jupyter.org
 [9]:http://ipython.org/notebook.html
+[10]:http://www.quantumobject.com
