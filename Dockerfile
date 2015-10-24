@@ -39,7 +39,7 @@ RUN apt-get update && apt-get install -y -q apt-utils \
                     msgpack-python \
                     libffi-dev \
                     libssl-dev \
-                    libzmq-dev \
+                    libzmq3-dev \
                     python-pip \
                     python-sympy \
                     python-zmq \
