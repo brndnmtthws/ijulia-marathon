@@ -3,6 +3,8 @@
 # `/sbin/setuser xxxxx` runs the given command as the user `xxxxxx`.
 # If you omit that part, the command will be run as root.
 
+set -e
+
 export HOME=/root
 cd /root
 
