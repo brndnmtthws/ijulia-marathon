@@ -1,6 +1,6 @@
 #name of container: docker-ijulia-notebook
-#versison of container: 0.5.4
-FROM quantumobject/docker-baseimage
+#versison of container: 0.5.5
+FROM quantumobject/docker-baseimage:15.04
 MAINTAINER Angel Rodriguez  "angel@quantumobject.com"
 
 #add repository and update the container
@@ -74,8 +74,8 @@ RUN apt-get update && apt-get install -y -q python-pip && pip install ipython \
                     && rm -rf /var/lib/apt/lists/*
                    
 # Ipopt
-RUN mkdir ipopt; cd ipopt; wget  http://www.coin-or.org/download/source/Ipopt/Ipopt-3.12.3.tgz; \
-    tar -xzf Ipopt-3.12.3.tgz; cd Ipopt-3.12.3; \
+RUN mkdir ipopt; cd ipopt; wget  http://www.coin-or.org/download/source/Ipopt/Ipopt-3.12.4.tgz; \
+    tar -xzf Ipopt-3.12.4.tgz; cd Ipopt-3.12.4; \
     cd ThirdParty/Blas; ./get.Blas; ./configure --prefix=/usr/local --disable-shared --with-pic; make install; cd ../..; \
     cd ThirdParty/Lapack; ./get.Lapack; ./configure --prefix=/usr/local --disable-shared --with-pic; make install; cd ../..; \
     cd ThirdParty/Mumps; ./get.Mumps; cd ../..; \
@@ -86,8 +86,8 @@ RUN mkdir ipopt; cd ipopt; wget  http://www.coin-or.org/download/source/Ipopt/Ip
     rm -rf ipopt
 
 # Cbc
-RUN mkdir cbc; cd cbc; wget http://www.coin-or.org/download/source/Cbc/Cbc-2.9.5.tgz; \
-    tar -xzf Cbc-2.9.5.tgz; cd Cbc-2.9.5; \
+RUN mkdir cbc; cd cbc; wget http://www.coin-or.org/download/source/Cbc/Cbc-2.9.7.tgz; \
+    tar -xzf Cbc-2.9.7.tgz; cd Cbc-2.9.7; \
     ./configure --prefix=/usr/local --enable-dependency-linking --without-blas --without-lapack --enable-cbc-parallel; \
     make install; \
     echo "/usr/local/lib" > /etc/ld.so.conf.d/cbc.conf; ldconfig; \
