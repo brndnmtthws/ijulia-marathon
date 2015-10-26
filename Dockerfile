@@ -27,8 +27,8 @@ RUN apt-get update && apt-get install -y -q apt-utils \
                     pdf2svg \
                     libc6 \
                     libc6-dev \
-                    python  \
-                    python-dev  \
+                    python3 \
+                    python3-dev  \
                     python-distribute \
                     python-software-properties \
                     software-properties-common \
@@ -40,7 +40,7 @@ RUN apt-get update && apt-get install -y -q apt-utils \
                     libffi-dev \
                     libssl-dev \
                     libzmq3-dev \
-                    python-pip \
+                    python3-pip \
                     python-sympy \
                     python-zmq \
                     python-jinja2 \
@@ -67,8 +67,7 @@ RUN apt-get update && apt-get install -y -q apt-utils \
                     && rm -rf /var/lib/apt/lists/*
                     
 # ipython notebook install
-RUN apt-get update && apt-get install -y -q python-pip && pip install ipython \
-                    && pip install --upgrade ipython[notebook] \
+RUN apt-get update  && pip3 install jupyter \
                     && apt-get clean \
                     && rm -rf /tmp/* /var/tmp/*  \
                     && rm -rf /var/lib/apt/lists/*
