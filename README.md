@@ -1,6 +1,6 @@
 # docker-ijulia
 
-#No working at the moment because of change of ubuntu/julia and jupyter .. tring to fix it.
+#No working at the moment because of change of ubuntu/julia and jupyter .. trying to fix it.
 
 docker container for [IJulia Notebook][3]
 
