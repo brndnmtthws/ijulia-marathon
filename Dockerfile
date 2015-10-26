@@ -11,6 +11,8 @@ RUN apt-get update && apt-get install -y -q apt-utils \
                     build-essential \
                     libpng12-dev \
                     libglib2.0-dev \
+                    librsvg2-bin \
+                    libpixman-1-0 \
                     hdf5-tools \
                     glpk-utils \
                     libnlopt0 \
