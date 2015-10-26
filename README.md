@@ -1,8 +1,12 @@
 # docker-ijulia
 
+#No working at the moment because of change of ubuntu/julia and jupyter .. tring to fix it.
+
 docker container for [IJulia Notebook][3]
 
 "IJulia is a [Julia-language][6] backend combined with the [IPython][7] interactive environment (soon to be called [Jupyter][8]). This combination allows you to interact with the Julia language using Jupyter/IPython's powerful [graphical notebook][9], which combines code, formatted text, math, and multimedia in a single document"
+
+This notebook is for the last version in development for Julia if you are looking for the stable version I recomended that used the official docker image from Jupyter:  [jupyter/datascience-notebook][11]   and for more jupyter [docker-stacks][12]
 
 ## Install dependencies
 
@@ -55,3 +59,5 @@ For additional info about us and our projects check our site [www.quantumobject.
 [8]:http://jupyter.org
 [9]:http://ipython.org/notebook.html
 [10]:http://www.quantumobject.com
+[11]:https://github.com/jupyter/docker-stacks/tree/master/datascience-notebook
+[12]:https://github.com/jupyter/docker-stacks
