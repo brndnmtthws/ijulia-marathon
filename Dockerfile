@@ -9,6 +9,8 @@ RUN add-apt-repository ppa:staticfloat/julianightlies \
     && add-apt-repository ppa:staticfloat/julia-deps 
 RUN apt-get update && apt-get install -y -q apt-utils \
                     build-essential \
+                    bzip2 \
+                    unzip \
                     libpng12-dev \
                     libglib2.0-dev \
                     librsvg2-dev \
@@ -64,6 +66,10 @@ RUN apt-get update && apt-get install -y -q apt-utils \
                     libnlopt-dev \
                     openmpi-bin \
                     libopenmpi-dev \
+                    texlive-latex-base \
+                    texlive-latex-extra \
+                    texlive-fonts-extra \
+                    texlive-fonts-recommended \
                     julia \
                     && apt-get clean \
                     && rm -rf /tmp/* /var/tmp/*  \
