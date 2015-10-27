@@ -11,8 +11,8 @@ RUN apt-get update && apt-get install -y -q apt-utils \
                     build-essential \
                     libpng12-dev \
                     libglib2.0-dev \
-                    librsvg2-bin \
-                    libpixman-1-0 \
+                    librsvg2-dev \
+                    libpixman-1-dev \
                     hdf5-tools \
                     glpk-utils \
                     libnlopt0 \
@@ -37,6 +37,7 @@ RUN apt-get update && apt-get install -y -q apt-utils \
                     python3-setuptools \
                     python3-yaml \
                     python-m2crypto \
+                    python-poppler \
                     python3-crypto \
                     python3-msgpack \
                     libffi-dev \
