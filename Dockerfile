@@ -32,25 +32,25 @@ RUN apt-get update && apt-get install -y -q apt-utils \
                     python3 \
                     python3-dev  \
                     python-distribute \
-                    python-software-properties \
+                    python3-software-properties \
                     software-properties-common \
-                    python-setuptools \
-                    python-yaml \
+                    python3-setuptools \
+                    python3-yaml \
                     python-m2crypto \
-                    python-crypto \
-                    msgpack-python \
+                    python3-crypto \
+                    python3-msgpack \
                     libffi-dev \
                     libssl-dev \
                     libzmq3-dev \
                     python3-pip \
                     python-sympy \
-                    python-zmq \
-                    python-jinja2 \
-                    python-requests \
-                    python-numpy \
-                    python-scipy \
-                    python-matplotlib \
-                    python-isodate \
+                    python3-zmq \
+                    python3-jinja2 \
+                    python3-requests \
+                    python3-numpy \
+                    python3-scipy \
+                    python3-matplotlib \
+                    python3-isodate \
                     pandoc \
                     libsundials-cvode1 \
                     libsundials-cvodes2 \
