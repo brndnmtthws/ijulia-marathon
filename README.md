@@ -1,7 +1,5 @@
 # docker-ijulia
 
-#No working at the moment because of change of ubuntu/julia and jupyter .. trying to fix it.
-
 docker container for [IJulia Notebook][3]
 
 "IJulia is a [Julia-language][6] backend combined with the [IPython][7] interactive environment (soon to be called [Jupyter][8]). This combination allows you to interact with the Julia language using Jupyter/IPython's powerful [graphical notebook][9], which combines code, formatted text, math, and multimedia in a single document"
