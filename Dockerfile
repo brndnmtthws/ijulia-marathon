@@ -7,10 +7,11 @@ MAINTAINER Angel Rodriguez  "angel@quantumobject.com"
 #Installation of nesesary package/software for this containers...
 RUN add-apt-repository ppa:staticfloat/julianightlies \
     && add-apt-repository ppa:staticfloat/julia-deps 
-RUN apt-get update && apt-get install -y -q apt-utils \
+RUN apt-get update && apt-get install -y -q --no-install-recommends apt-utils \
                     build-essential \
                     bzip2 \
                     unzip \
+                    libnettle4 \
                     libpng12-dev \
                     libglib2.0-dev \
                     librsvg2-dev \
@@ -19,6 +20,9 @@ RUN apt-get update && apt-get install -y -q apt-utils \
                     glpk-utils \
                     libnlopt0 \
                     gfortran \
+                    gcc \
+                     fonts-dejavu \
+                     libxrender1 \
                     imagemagick \
                     inkscape \
                     gettext \
