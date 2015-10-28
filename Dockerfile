@@ -76,7 +76,7 @@ RUN apt-get update && apt-get install -y -q apt-utils \
                     && rm -rf /var/lib/apt/lists/*
                     
 # ipython notebook install
-RUN apt-get update  && pip3 install jupyter ipywidgets\
+RUN apt-get update  && pip3 install jupyter ipywidgts ipython\
                     && apt-get clean \
                     && rm -rf /tmp/* /var/tmp/*  \
                     && rm -rf /var/lib/apt/lists/*
