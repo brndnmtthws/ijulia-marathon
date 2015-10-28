@@ -1,12 +1,5 @@
 #!/bin/bash
 
-
-#reason of this script is that dockerfile only execute one command at the time but we need sometimes at the moment we create 
-#the docker image to run more that one software for expecified configuration like when you need mysql running to chnage or create
-#database for the container ...
-
-python -m IPython.external.mathjax
-
 jupyter notebook --generate-config
 
 julia -e 'Pkg.init(); Pkg.add("IJulia"); Pkg.add("PyPlot"); Pkg.add("SIUnits"); Pkg.add("Gadfly"); Pkg.add("DataStructures"); Pkg.add("HDF5"); Pkg.add("Iterators"); Pkg.add("MCMC"); Pkg.add("NumericExtensions"); Pkg.add("SymPy"); Pkg.add("Interact"); Pkg.add("Roots");'
