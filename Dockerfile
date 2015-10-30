@@ -117,7 +117,6 @@ RUN conda install --yes \
     'dill=0.2*' \
     'numba=0.20*' \
     'bokeh=0.9*' \
-    && conda update \
     && conda clean -yt
 
 # WORKAROUND: symlink version of zmq required by latest rzmq back into conda lib
