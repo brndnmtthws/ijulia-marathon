@@ -8,10 +8,25 @@ MAINTAINER Angel Rodriguez  "angel@quantumobject.com"
 RUN add-apt-repository ppa:staticfloat/julianightlies \
     && add-apt-repository ppa:staticfloat/julia-deps 
 RUN apt-get update && apt-get install -y -q --no-install-recommends apt-utils \
+                    git \
                     build-essential \
                     bzip2 \
                     unzip \
+                    python3 \
+                    python3-dev  \
+                    ca-certificates \
+                    libsm6 \
+                    pandoc \
+                    texlive-latex-base \
+                    texlive-latex-extra \
+                    texlive-fonts-extra \
+                    texlive-fonts-recommended \
+                    libxrender1 \
+                    gfortran \
+                    gcc \
+                    fonts-dejavu \
                     libnettle4 \
+                    julia \
                     libpng12-dev \
                     libglib2.0-dev \
                     librsvg2-dev \
@@ -19,10 +34,6 @@ RUN apt-get update && apt-get install -y -q --no-install-recommends apt-utils \
                     hdf5-tools \
                     glpk-utils \
                     libnlopt0 \
-                    gfortran \
-                    gcc \
-                     fonts-dejavu \
-                     libxrender1 \
                     imagemagick \
                     inkscape \
                     gettext \
@@ -35,8 +46,6 @@ RUN apt-get update && apt-get install -y -q --no-install-recommends apt-utils \
                     pdf2svg \
                     libc6 \
                     libc6-dev \
-                    python3 \
-                    python3-dev  \
                     python-distribute \
                     python3-software-properties \
                     software-properties-common \
@@ -55,10 +64,7 @@ RUN apt-get update && apt-get install -y -q --no-install-recommends apt-utils \
                     python3-jinja2 \
                     python3-requests \
                     python3-numpy \
-                    python3-scipy \
-                    python3-matplotlib \
                     python3-isodate \
-                    pandoc \
                     libsundials-cvode1 \
                     libsundials-cvodes2 \
                     libsundials-ida2 \
@@ -70,11 +76,6 @@ RUN apt-get update && apt-get install -y -q --no-install-recommends apt-utils \
                     libnlopt-dev \
                     openmpi-bin \
                     libopenmpi-dev \
-                    texlive-latex-base \
-                    texlive-latex-extra \
-                    texlive-fonts-extra \
-                    texlive-fonts-recommended \
-                    julia \
                     && apt-get clean \
                     && rm -rf /tmp/* /var/tmp/*  \
                     && rm -rf /var/lib/apt/lists/*
@@ -99,7 +100,32 @@ RUN conda install --yes \
     'notebook=4.0*' \
     terminado \
     && conda clean -yt
-                   
+
+# Install Python 3 packages
+RUN conda install --yes \
+    'ipywidgets=4.0*' \
+    'pandas=0.16*' \
+    'matplotlib=1.4*' \
+    'scipy=0.15*' \
+    'seaborn=0.6*' \
+    'scikit-learn=0.16*' \
+    'scikit-image=0.11*' \
+    'sympy=0.7*' \
+    'cython=0.22*' \
+    'patsy=0.3*' \
+    'statsmodels=0.6*' \
+    'cloudpickle=0.1*' \
+    'dill=0.2*' \
+    'numba=0.20*' \
+    'bokeh=0.9*' \
+    && conda update \
+    && conda clean -yt
+
+# WORKAROUND: symlink version of zmq required by latest rzmq back into conda lib
+# https://github.com/jupyter/docker-stacks/issues/55
+RUN ln -s /opt/conda/pkgs/zeromq-4.0.*/lib/libzmq.so.4.* /opt/conda/lib/libzmq.so.4 
+RUN ln -s /opt/conda/pkgs/libsodium-0.4.*/lib/libsodium.so.4.* /opt/conda/lib/libsodium.so.4
+                
 # Ipopt
 RUN mkdir ipopt; cd ipopt; wget  http://www.coin-or.org/download/source/Ipopt/Ipopt-3.12.4.tgz; \
     tar -xzf Ipopt-3.12.4.tgz; cd Ipopt-3.12.4; \
