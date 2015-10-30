@@ -79,11 +79,26 @@ RUN apt-get update && apt-get install -y -q --no-install-recommends apt-utils \
                     && rm -rf /tmp/* /var/tmp/*  \
                     && rm -rf /var/lib/apt/lists/*
                     
-# ipython notebook install
-RUN apt-get update  && pip3 install jupyter ipywidgets ipython\
-                    && apt-get clean \
-                    && rm -rf /tmp/* /var/tmp/*  \
-                    && rm -rf /var/lib/apt/lists/*
+
+# Configure environment
+ENV CONDA_DIR /opt/conda
+ENV PATH $CONDA_DIR/bin:$PATH
+ENV SHELL /bin/bash
+
+# Install conda
+RUN mkdir -p $CONDA_DIR && \
+    echo export PATH=$CONDA_DIR/bin:'$PATH' > /etc/profile.d/conda.sh && \
+    wget --quiet https://repo.continuum.io/miniconda/Miniconda3-3.9.1-Linux-x86_64.sh && \
+    echo "6c6b44acdd0bc4229377ee10d52c8ac6160c336d9cdd669db7371aa9344e1ac3 *Miniconda3-3.9.1-Linux-x86_64.sh" | sha256sum -c - && \
+    /bin/bash /Miniconda3-3.9.1-Linux-x86_64.sh -f -b -p $CONDA_DIR && \
+    rm Miniconda3-3.9.1-Linux-x86_64.sh && \
+    $CONDA_DIR/bin/conda install --yes conda==3.14.1
+                    
+# Install Jupyter notebook
+RUN conda install --yes \
+    'notebook=4.0*' \
+    terminado \
+    && conda clean -yt
                    
 # Ipopt
 RUN mkdir ipopt; cd ipopt; wget  http://www.coin-or.org/download/source/Ipopt/Ipopt-3.12.4.tgz; \
