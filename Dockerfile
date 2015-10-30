@@ -59,7 +59,6 @@ RUN apt-get update && apt-get install -y -q --no-install-recommends apt-utils \
                     libssl-dev \
                     libzmq3-dev \
                     python3-pip \
-                    python-sympy \
                     python3-zmq \
                     python3-jinja2 \
                     python3-requests \
