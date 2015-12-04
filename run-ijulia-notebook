@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -e
+
+d=$(openssl rand -base64 8)
+echo "c.NotebookApp.password = u'$d'" >>  /root/.jupyter/jupyter_notebook_config.py
+echo "Notebook password is: $d"
+mkdir -p /root/.ssl
+openssl genrsa -out /tmp/server-key.pem 2048
+openssl req -new -key /tmp/server-key.pem -out /tmp/server-csr.pem -subj /CN=*/
+openssl x509 -req -in /tmp/server-csr.pem -out /tmp/server-cert.pem -signkey /tmp/server-key.pem -days 3650
+cat /tmp/server-cert.pem /tmp/server-key.pem > /root/.ssl/mycert.pem
+rm /tmp/server-*.pem
+
+echo "c.NotebookApp.certfile = u'/root/.ssl/mycert.pem'" >>  /root/.jupyter/jupyter_notebook_config.py
+echo "c.NotebookApp.keyfile = u'/root/.ssl/mycert.pem'" >>  /root/.jupyter/jupyter_notebook_config.py
+echo "c.IPKernelApp.pylab = 'inline'" >  /root/.jupyter/jupyter_notebook_config.py
+echo "c.NotebookApp.open_browser = False" >>  /root/.jupyter/jupyter_notebook_config.py
+echo "c.NotebookApp.ip = \"0.0.0.0\"" >>  /root/.jupyter/jupyter_notebook_config.py
+echo "c.NotebookApp.port = ${PORT0}" >>  /root/.jupyter/jupyter_notebook_config.py
+echo "c.NotebookApp.allow_origin = \"*\"" >>  /root/.jupyter/jupyter_notebook_config.py
+update-locale
+
+exec jupyter notebook
